@@ -1,0 +1,79 @@
+#LeetCode 
+#two sum
+class Solution(object):
+    def twoSum(self, nums, target):
+        n = len(nums)
+        for i in range(n):
+            for j in range(i + 1, n):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+
+#palindrome no.
+class Solution:
+    def isPalindrome(self, x):
+        if x < 0:
+            return False
+        original = x
+        reversed_num = 0
+        while x > 0:
+            reversed_num = (reversed_num * 10) + (x % 10)
+            x //= 10
+            
+        return reversed_num == original
+
+#HackerRank
+#sum of two integers
+def solveMeFirst(a,b):
+    return a+b
+num1 = int(input())
+num2 = int(input())
+result = solveMeFirst(num1, num2)
+print(result)
+
+#simple array sum
+size=int(input())
+array1=list(map(int,input().split()))
+addition=0
+for i in array1:
+    addition=addition+i
+print(addition)
+
+#compare the triplets
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+alice=0
+bob=0
+for i in range(3):
+    if a[i]>b[i]:
+        alice+=1
+    elif a[i]<b[i]:
+        bob+=1
+print(alice,bob)
+
+#a very big sum
+def aVeryBigSum(ar):
+    return sum(ar)
+    
+n=int(input())
+ar=list(map(int,input().split()))
+
+result=aVeryBigSum(ar)
+print(result)
+
+#time conversion
+def timeConversion(s):
+    hour = int(s[:2])
+    period = s[-2:]
+    
+    if period == "AM":
+        if hour == 12:
+            hour = 0
+    else:
+        if hour != 12:
+            hour += 12
+
+    return f"{hour:02d}" + s[2:8]
+
+s = input()
+print(timeConversion(s))
+
